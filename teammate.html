@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to kt</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card-img-top {
+          object-fit: cover; /* 確保圖片填滿而不會變形 */
+          aspect-ratio: 1 / 1; /* 設定為正方形比例 */
+          width: 100%; /* 填滿父容器寬度 */
+         height: auto; /* 自動調整高度，保持比例 */
+        }
+        .carousel-item img {
+            height: calc(50vh - 56px); /* 減去導航欄高度（56px為預設高度） */
+            object-fit: cover; /* 使圖片保持比例並填滿 */
+        }
+        .video-responsive {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 的比例 */
+            height: 0;
+            overflow: hidden;
+        }
+        .video-responsive iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #fullscreen-btn {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+    <link rel="stylesheet" href="stylee.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Kent Tube</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="切換導航">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">首頁</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="introduce.html">產品介紹</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="feature.html">產品特色</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">服務聯繫</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="teammate.html">團隊成員</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="purchase.html">購買專區</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="carousel-inner">
+    <div class="carousel-item active">
+        <img src="mus.png" class="d-block w-100" alt="看板1">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+    </div>
+</div>
+<header>
+    <div class="line"></div> <!-- 上橫線 -->
+    <p>團隊成員</p> <!-- 置中的標題 -->
+    <div class="line"></div> <!-- 下橫線 -->
+</header>
+
+<div class="title-container">
+    <h2 class="special-heading">組長</h2>
+</div>
+
+<div style="background-image: url('b.jpg'); background-size: cover; color: rgb(0, 0, 0); padding: 10px;">
+<div class="container mt-4">
+    <div class="row">
+        
+            <div class="col-md-6">
+                <img src="dog.jpg" alt="園長圖片" class="profile-image">
+            </div>
+            <div class="col-md-6">
+                <h3 class="special-heading1">林柏荏</h3>
+                <p><strong>星座：</strong>雙子座</p>
+                <p><strong>個性：</strong>慢熱</p>
+                <p><strong>興趣：</strong>打LOL，打特戰</p>
+                <p><strong>專長：</strong>將光與電整合</p>
+                <p><strong>最喜歡做的事：</strong>打羽球，大家可以揪我打羽球，雖然我很菜。</p>
+            </div>
+    </div>
+</div>
+</div>
+
+<div class="title-container">
+    <h2 class="special1-heading">組員</h2>
+</div>
+
+<div style="background-image: url('b.jpg'); background-size: cover; color: rgb(0, 0, 0); padding: 10px;">
+    <div class="container mt-4">
+        <div class="row">
+            
+                <div class="col-md-6">
+                    <img src="dog.jpg" alt="園長圖片" class="profile-image">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="special-heading1">許凱富</h3>
+                    <p><strong>星座：</strong>雙子座</p>
+                    <p><strong>個性：</strong>隨興</p>
+                    <p><strong>興趣：</strong>電腦改裝、電腦遊戲</p>
+                    <p><strong>專長：</strong>光固化3D列印機操作</p>
+                    <p><strong>最喜歡做的事：</strong>打電腦遊戲</p>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="title-container">
+    <h2 class="special1-heading">組員</h2>
+</div>
+
+<div style="background-image: url('b.jpg'); background-size: cover; color: rgb(0, 0, 0); padding: 10px;">
+    <div class="container mt-4">
+        <div class="row">
+            
+                <div class="col-md-6">
+                    <img src="dog.jpg" alt="園長圖片" class="profile-image">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="special-heading1">楊勝棠</h3>
+                    <p><strong>星座：</strong>天秤座</p>
+                    <p><strong>個性：</strong>慢熱</p>
+                    <p><strong>興趣：</strong>看小說</p>
+                    <p><strong>專長：</strong>SoildWork</p>
+                    <p><strong>最喜歡做的事：</strong>散步</p>
+                </div>
+        </div>
+    </div>
+</div>
+
+<div class="title-container">
+    <h2 class="special1-heading">組員</h2>
+</div>
+
+<div style="background-image: url('b.jpg'); background-size: cover; color: rgb(0, 0, 0); padding: 10px;">
+    <div class="container mt-4">
+        <div class="row">
+            
+                <div class="col-md-6">
+                    <img src="dog.jpg" alt="園長圖片" class="profile-image">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="special-heading1">李秉軒</h3>
+                    <p><strong>星座：</strong>雙魚座</p>
+                    <p><strong>個性：</strong>謹慎</p>
+                    <p><strong>興趣：</strong>閱讀小說，一戰二戰歷史</p>
+                    <p><strong>專長：</strong>2D3D繪圖製作</p>
+                    <p><strong>最喜歡做的事：</strong>散步</p>
+                </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>電子郵件:41226216@nfu.edu.tw │ 地址: 虎為科技大學 │ 電話號碼: 0978440363</p>
+    <p>～本網站資料純屬研習模擬演練，若有侵權或權益受損，請來電通知更正～</p>
+    <p>© 2024 Kent Tube All Rights Reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

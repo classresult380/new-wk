@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to kt</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .carousel-item img {
+            height: calc(50vh - 56px); /* 減去導航欄高度（56px為預設高度） */
+            object-fit: cover; /* 使圖片保持比例並填滿 */
+        }
+        .video-responsive {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 的比例 */
+            height: 0;
+            overflow: hidden;
+        }
+        .video-responsive iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        body ul{
+            text-align: center
+        }
+        .product {
+            margin: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .cart {
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        body span{
+            font-size: 20px; /* 放大介紹文字 */
+        }
+        .cart-item {
+            margin: 10px 0;
+        }
+        .remove-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Kent Tube</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="切換導航">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="introduce.html">產品介紹</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feature.html">產品特色</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">服務聯繫</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="teammate.html">團隊成員</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="purchase.html">購買專區</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<div class="carousel-inner">
+    <div class="carousel-item active">
+        <img src="mus.png" class="d-block w-100" alt="看板1">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+    </div>
+</div>
+<header>
+    <div class="line"></div> <!-- 上橫線 -->
+    <p>購買專區</p> <!-- 置中的標題 -->
+    <div class="line"></div> <!-- 下橫線 -->
+</header>
+<h2 class="special-heading">產品項目</h2>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="product">
+                <img src="product1.jpg" alt="產品1">
+                <h3>產品1</h3>
+                <p>肯特管用於載具。</p>
+                <span>價格：100</span>
+                <button onclick="addToCart('肯特管', 100)">加入購物車</button>
+            </div>
+         </div>
+         <div class="col-md-4 mb-4">
+            <div class="product">
+                <img src="product2.jpg" alt="產品2">
+                <h3>產品2</h3>
+                <p>鏡頭好壞很重要。</p>
+                <span>價格：$700</span>
+                <button onclick="addToCart('鏡頭', 700)">加入購物車</button>
+            </div>
+         </div>
+         <div class="col-md-4 mb-4">
+            <div class="product">
+                <img src="product3.jpg" alt="產品3">
+                <h3>產品3</h3>
+                <p>喇叭用於傳波。</p>
+                <span>價格：$500</span>
+                <button onclick="addToCart('喇叭', 500)">加入購物車</button>
+            </div>
+        </div>
+     </div>
+</div>
+
+<section id="cart">
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-12 mb-6" style="text-align: center;">
+                <h2 class="special-heading">我的購物車</h2>
+                <ul id="cart-items"></ul>
+             </div>
+         </div>
+    </div>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6 mb-4" style="text-align: center;">
+                <button onclick="viewCart()">查看購物車</button>
+             </div>
+             <div class="col-md-6 mb-4" style="text-align: center;">
+                <button class="remove-btn" onclick="removeFromCart(0)">刪除</button>
+             </div>
+         </div>
+    </div>
+    
+    
+</section>
+<h2 class="special-heading">程式將封裝寄送</h2>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6">
+            <h5>聯繫電話</h5>
+            <p>0978440363</p>
+        </div>
+        <div class="col-md-6">
+            <h5>電子郵件</h5>
+            <p><a href="mailto:linbairenlin@gmail.com">linbairenlin@gmail.com</a></p>
+        </div>
+        <div class="col-md-6">
+            <h5>地址</h5>
+            <p>虎為科技大學</p>
+        </div>
+        <div class="col-md-6">
+            <h5>營業時間</h5>
+            <p>星期一至星期五：09:00 - 18:00<br>星期六：09:00 - 13:00<br>星期日：休息</p>
+        </div>
+    </div>
+</div>
+    <div class="container mt-4">
+        <div class="row">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0EHhQw-capV-wjUNMFEoGurEQJAfG9s99gwCI--mVkoXApA/viewform?usp=sf_link" width="640" height="480" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>     
+    </div>
+    </div>
+</div>
+<script>
+    // 添加商品到購物車
+    function addToCart(productName, price) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push({ name: productName, price: price });
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(productName + ' 已加入購物車！');
+        localStorage.setItem('cart', JSON.stringify(cart)); // 更新本地儲存
+        viewCart(); // 更新購物車顯示
+    }
+
+    // 顯示購物車內容
+    function viewCart() {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let cartItems = document.getElementById('cart-items');
+        cartItems.innerHTML = '';
+        if (cart.length > 0) {
+            cart.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = `${item.name} - $${item.price}`;
+                cartItems.appendChild(li);
+            });
+        } else {
+            cartItems.innerHTML = '<li>購物車是空的</li>';
+        }
+    }
+    function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1); // 刪除指定位置的商品
+            localStorage.setItem('cart', JSON.stringify(cart)); // 更新本地儲存
+            viewCart(); // 更新購物車顯示
+        }
+    // 初始載入時顯示購物車
+    window.onload = viewCart;
+</script>
+<footer>
+    <p>電子郵件:41226216@nfu.edu.tw │ 地址: 虎為科技大學 │ 電話號碼: 0978440363</p>
+    <p>～本網站資料純屬研習模擬演練，若有侵權或權益受損，請來電通知更正～</p>
+    <p>© 2024 Kent Tube All Rights Reserved.</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

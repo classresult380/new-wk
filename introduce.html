@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to kt</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .carousel-item img {
+            height: calc(50vh - 56px); /* 減去導航欄高度（56px為預設高度） */
+            object-fit: cover; /* 使圖片保持比例並填滿 */
+        }
+        .video-responsive {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 的比例 */
+            height: 0;
+            overflow: hidden;
+        }
+        .video-responsive iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Kent Tube</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="切換導航">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">首頁</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="introduce.html">產品介紹</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="feature.html">產品特色</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">服務聯繫</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="teammate.html">團隊成員</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="purchase.html">購買專區</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="carousel-inner">
+    <div class="carousel-item active">
+        <img src="mus.png" class="d-block w-100" alt="看板1">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+    </div>
+</div>
+<header>
+    <div class="line"></div> <!-- 上橫線 -->
+    <p>產品介紹</p> <!-- 置中的標題 -->
+    <div class="line"></div> <!-- 下橫線 -->
+</header>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Kent Tube</h1>
+            <p>判斷吹得好不好</p>
+            <div class="product-image">
+                <img src="Ac.jpg" alt="產品圖片">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="product-specs">
+                 <h2>所需設備</h2>
+                 <ul>
+                    <li>鏡頭</li>
+                  <li>肯特管</li>
+                   <li>喇叭</li>
+                    <li>保麗龍球</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+                <h2>產品描述</h2>
+                <p>利用opencv進行圖像辨識，來打分數。</p>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <p>電子郵件:41226216@nfu.edu.tw │ 地址: 虎為科技大學 │ 電話號碼: 0978440363</p>
+    <p>～本網站資料純屬研習模擬演練，若有侵權或權益受損，請來電通知更正～</p>
+    <p>© 2024 Kent Tube All Rights Reserved.</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
